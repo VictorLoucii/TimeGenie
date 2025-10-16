@@ -21,5 +21,4 @@ A deployable AI/ML-assisted Timetable Generator that:
 - Offers exportable formats (PDF, Excel) for student and faculty sharing
 - Can be integrated with existing Academic Management Systems
 
-see this is the project i have to build my hackathon project on. 
-go through it first then i'll ask you questions regarding it
+
