@@ -1,42 +1,175 @@
+/* frontend/src/App.css */
+
+:root {
+  background-color: #242424; 
+  color: white;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
+  text-align: center; 
+}
+
+/* --- 1. CENTER EVERYTHING --- */
+.app-container {
+  max-width: 1400px; /* Increased width for the big grid */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This forces center alignment */
+  justify-content: flex-start;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #aaaaaa;
+}
+
+/* --- 2. FIX BUTTON COLOR --- */
+.generate-btn {
+  background: linear-gradient(45deg, #6200ea, #a100ff); /* Bright Purple Gradient */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(98, 0, 234, 0.4); /* Glow effect */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(98, 0, 234, 0.6);
+}
+
+.generate-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* --- 3. CENTER THE GRID --- */
+.grid-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centers the table horizontally */
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.timetable-grid {
+  border-collapse: collapse;
+  background: white;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timetable-grid th, 
+.timetable-grid td {
+  border: 1px solid #e0e0e0;
   text-align: center;
+  padding: 10px;
+  min-width: 130px;
+  color: #333; /* Force text to be dark */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Header Colors */
+.timetable-grid th {
+  background-color: #1a1a1a; /* Dark header */
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Day Column Color */
+.day-header {
+  background-color: #6200ea; /* Purple Day Column */
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Cell Blocks */
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.card {
-  padding: 2em;
+.class-block {
+  border-radius: 4px;
+  padding: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.read-the-docs {
-  color: #888;
+.theory-block {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+}
+
+.lab-block {
+  background-color: #fff3e0;
+  border-left: 4px solid #ff9800;
+}
+
+.course-code {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #555;
+  margin: 2px 0;
+}
+
+.faculty {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.empty-slot {
+  color: #ccc;
+}
+
+/* Footer Styling */
+.app-footer p {
+  color: #ffffff;       /* Pure White */
+  font-size: 1.5rem;    /* Much Bigger */
+  font-weight: 800;     /* Extra Bold */
+  margin-bottom: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Adds a subtle drop shadow for readability */
+  letter-spacing: 1px;
 }
